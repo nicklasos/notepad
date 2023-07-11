@@ -1,0 +1,12 @@
+<html contenteditable onkeyup="saveDocument(this)" lang="en">
+
+<script>
+    function saveDocument() {
+        localStorage.setItem('document', document.body.innerHTML);
+        console.log('save doc');
+    }
+
+    window.addEventListener("load", () => {
+        document.body.innerHTML = localStorage.getItem('document');
+    });
+</script>
